@@ -1,20 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+    <EditText
+        android:id="@+id/editNota1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Digite uma nota P1"
+        android:inputType="number"/>
+
+    <EditText
+        android:id="@+id/editNota2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Digite uma nota P2"
+        android:inputType="number"/>
+
     <Button
-        android:id="@+id/btnProxima"
+        android:id="@+id/btnCalcular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Proxíma tela" />
+        android:text="Média"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:id="@+id/txtResultado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="50sp"
+        android:textAlignment="center"/>
+
 
 
     <EditText
-        android:id="@+id/editValor"
+        android:id="@+id/editPeso"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Digite um valor"
+        android:hint="Digite seu peso"
         android:inputType="number"/>
+
+    <EditText
+        android:id="@+id/editAltura"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Digite sua altura"
+        android:inputType="number"/>
+
+    <Button
+        android:id="@+id/btnIMC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="IMC"
+        android:layout_gravity="center_horizontal"/>
+
+    <TextView
+        android:id="@+id/txtClassificação"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="50sp"
+        android:textAlignment="center"/>
 
 </LinearLayout>

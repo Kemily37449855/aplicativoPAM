@@ -4,6 +4,7 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -16,15 +17,18 @@ class MainActivity : AppCompatActivity() {
 
         setContentView(R.layout.aulaid)
 
-        val botao = findViewById<Button>(R.id.btnProxima)
-        val texto = findViewById<EditText>(R.id.editValor)
-
-        botao.text = "Novo Texto"
+        val nota1 = findViewById<EditText>(R.id.editNota1)
+        val nota2 = findViewById<EditText>(R.id.editNota2)
+        val resultado = findViewById<TextView>(R.id.txtResultado)
+        val botao =  findViewById<Button>(R.id.btnCalcular)
 
         botao.setOnClickListener {
 
-           botao.text = texto.text
+            resultado.text =( (nota1.text.toString().toFloat()
+                    + nota2.text.toString().toFloat())/2 ).toString()
+
         }
+
 
     }
 }
