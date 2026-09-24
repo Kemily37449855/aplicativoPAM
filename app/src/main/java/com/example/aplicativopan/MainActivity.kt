@@ -5,30 +5,51 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
+import com.example.aplicativopan.R
 
 class MainActivity : AppCompatActivity() {
-    @SuppressLint("MissingInflatedId")
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.aulaid)
 
         val nota1 = findViewById<EditText>(R.id.editNota1)
         val nota2 = findViewById<EditText>(R.id.editNota2)
-        val resultado = findViewById<TextView>(R.id.txtResultado)
-        val botao =  findViewById<Button>(R.id.btnCalcular)
+        val resultadoMedia = findViewById<TextView>(R.id.txtResultado)
+        val botaoMedia = findViewById<Button>(R.id.btnCalcular)
 
-        botao.setOnClickListener {
+        botaoMedia.setOnClickListener {
+            val p1 = nota1.text.toString().toFloatOrNull()
+            val p2 = nota2.text.toString().toFloatOrNull()
 
-            resultado.text =( (nota1.text.toString().toFloat()
-                    + nota2.text.toString().toFloat())/2 ).toString()
-
+            if (p1 != null && p2 != null) {
+                val media = (p1 + p2) / 2
+                resultadoMedia.text = "Média é %.2f".format(media)
+            } else {
+                resultadoMedia.text = "Digite as duas notas"
+            }
         }
 
+        val peso = findViewById<EditText>(R.id.editPeso)
+        val altura = findViewById<EditText>(R.id.editAltura)
+        val resultadoImc = findViewById<TextView>(R.id.txtClassificação)
+        val botaoImc = findViewById<Button>(R.id.btnIMC)
+        botaoImc.setOnClickListener {
+            val pesoValor = peso.text.toString().toFloatOrNull()
+            val alturaValor = altura.text.toString().toFloatOrNull()
+            if (pesoValor != null && alturaValor != null && alturaValor > 0f) {
+                val imc = pesoValor / (alturaValor * alturaValor)
+                resultadoImc.text = String.format("Seu IMC é: %.2f", imc)
+            } else {
+                resultadoImc.text = "Digite peso e altura válidos!"
+
+            }
+        }
 
     }
 }
+
+
+
