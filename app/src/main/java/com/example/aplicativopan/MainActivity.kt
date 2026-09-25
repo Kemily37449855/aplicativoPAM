@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.aulaid)
+        setContentView(R.layout.atividade)
 
         val nota1 = findViewById<EditText>(R.id.editNota1)
         val nota2 = findViewById<EditText>(R.id.editNota2)
